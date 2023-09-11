@@ -1,0 +1,19 @@
+name: ProPra TicTacToe Workflow
+
+on:
+  push:
+    branches:
+      - submission
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: education/autograding@v1
